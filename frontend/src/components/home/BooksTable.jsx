@@ -4,7 +4,13 @@ import {BsInfoCircle} from 'react-icons/bs'
 import {MdOutlineAddBox, MdOutlineDelete} from 'react-icons/md'
 
 const BooksTable = ({books}) => {
+
+  if (!Array.isArray(books)) {
+    console.error('Invalid "books" prop. Expected an array.');
+    return null; // or display an error message, or an empty table, depending on your requirements
+  }
   return (
+  
     <table className="w-full border-seprate border-spacing-2">
           <thead>
             <tr>

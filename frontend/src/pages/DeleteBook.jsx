@@ -14,7 +14,7 @@ const DeleteBooks = () => {
   const handleDeleteBook = () =>{
     
     setLoading(true);
-    axios.delete(`http://localhost:27017/books/${id}`,{
+    axios.delete(`http://localhost:8000/books/${id}`,{
       title,
       author,
       publishYear

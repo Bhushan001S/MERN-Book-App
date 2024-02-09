@@ -3,7 +3,8 @@ import { PORT , mongoDBURL} from './config.js'
 import mongoose from 'mongoose';
 import { Book } from './models/bookModel.js';
 import booksRoute from './routes/booksRoute.js'
-const cors = require('cors');
+import cors from 'cors';
+// const cors = require('cors');
 const app= express();
 
 
@@ -19,7 +20,7 @@ app.get('/',(request,response) =>{
     return response.status(234).send('Welcome To Book Store Website')
 })
 
-app.use('./books',booksRoute);
+app.use('/books',booksRoute);
 
 mongoose
     .connect(mongoDBURL)

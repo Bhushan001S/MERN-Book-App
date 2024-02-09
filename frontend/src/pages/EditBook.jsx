@@ -15,7 +15,7 @@ const EditBooks = () => {
   const {id} = useParams();
 
   useEffect(() => {
-    axios.get(`http://localhost:27017/books/${id}`)
+    axios.get(`http://localhost:8000/books/${id}`)
     .then((response) => {
       setTile(response.data.title);
       setAuthor(response.data.author);
@@ -33,7 +33,7 @@ const EditBooks = () => {
   const handleEditBook = () =>{
     
     setLoading(true);
-    axios.put(`http://localhost:27017/books/${id}`,{
+    axios.put(`http://localhost:8000/books/${id}`,{
       title,
       author,
       publishYear

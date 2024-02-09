@@ -9,6 +9,7 @@ router.post('/',async(request,response) =>{
         if(!request.body.title || !request.body.author || !request.body.publishYear){
             return response.status(400).send({
                 message:'Send all required fields: title, author, publishYear',
+                
             });
         }
         const newBook= {
@@ -95,4 +96,4 @@ router.delete('/:id',async (request,response) =>{
     }
 });
 
-export default router; 
+export default router;  
